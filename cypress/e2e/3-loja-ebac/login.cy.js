@@ -22,7 +22,7 @@ it('Deve fazer login com sucesso - Usando massa de dados ', () => {
 
 });
 
-it.only('Deve fazer login com sucesso - Usando ', () => {
+it('Deve fazer login com sucesso - Usando ', () => {
    cy.fixture('perfil').then(dados => {
        cy.visit('minha-conta')
        cy.get('#username').type(dados.usuario,{log: false})
@@ -35,7 +35,11 @@ it.only('Deve fazer login com sucesso - Usando ', () => {
 
 });
 
+it('Deve fazer login com sucesso - usando Comandos customizados ', () => {
+   cy.login('vander@teste.com.br', '123456')
+     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, vander (não é vander? Sair)')
 
+});
 
 
 

@@ -7,10 +7,7 @@ describe('Funcionalidade: Produtos ', () => {
 
     it('Deve selecinar um produto da lista ', () => {
     cy.get('.products > .row')
-         //.first()
-         //.last()
 
-         //.eq(2)
          .contains('Argus All-Weather Tank')
 
          .click()
